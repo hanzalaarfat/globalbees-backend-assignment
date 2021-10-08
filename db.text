@@ -1,0 +1,45 @@
+ Question 1
+### Task:
+
+1. Find the name of the supplier who supplies the part 'motor belt'.
+A-select s.sname, 
+       t.num_products
+from (
+  select sid, 
+         count(*) as num_products,
+         dense_rank() over (order by count(*) desc) as rnk
+  from catalog
+  group by sid
+) t
+  join suppliers s on s.sid = t.sid
+where t.rnk = 1;
+
+
+2. Find the supplier detail who supplies all parts.
+A- select sid,pid from catalog order by sid;
+
+3. Find the details of parts supplied by at least two different suppliers.
+A- SELECT pid
+FROM (SELECT DISTINCT pid, DENSE_RANK() OVER(PARTITION BY Pid ORDER BY sid) rn
+		fROM Catalog
+	 ) t
+WHERE t.rn>=2;
+
+
+Question 2
+**Write a single SQL query to get the following information:**
+
+For every user of every brand get:
+
+- Brand Name
+- User Name
+- Email
+- Total points earned till date
+- Total points redeemed till date
+
+A- SELECT brand_name,user_name,email, point_value 
+FROM transaction a
+WHERE 1 < 
+    (SELECT COUNT(*) 
+     FROM user 
+     WHERE brand_id=a.brand_id);

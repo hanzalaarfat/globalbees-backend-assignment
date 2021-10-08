@@ -1,0 +1,37 @@
+1. Array lookup is always O(1). It does not depend on the size of the array. The basic idea about arrays is that 
+it contains objects/references with fixed size so you can just do size * index to have the position of the object 
+you are looking for.
+
+2. O(n) means that the duration grows as the array grows: finding a specific item in an array takes twice the time 
+if the array is twice the size. O(n²) means that the duration grows as the square of the array growth
+
+
+3.
+Depending on a number of factors, it may actually be faster to copy the list to an array and then use a Quicksort. 
+The reason this might be faster is that an array has much better cache performance than a linked list
+The average case run time of quick sort is O(n logn) 
+
+4.Consider the situation where no other data structure like arrays, linked list is available to you. 
+ A queue can be implemented using two stacks
+
+ 5. it will replace the element of the corresponding key. HashMap is similar to HashTable, but it is unsynchronized. 
+ It allows to store the null keys as well, but there should be only one null key object and there can be any number of
+  null values
+
+6. You cannot delete elements from an array, you need to create new copy from the original one, and then return the result,
+ or change the reference of the original array to the new copy
+
+8.Circular Doubly Linked List has properties of both doubly linked list and circular linked list in which two consecutive 
+elements are linked or connected by previous and next pointer and the last node points to first node by next pointer and 
+also the first node points to last node by the previous pointer.
+
+9.A- Many programming languages implement recursion by means of stacks. 
+
+
+10.
+An overflow occurs when the home bucket for a new pair (key, element) is full. • We may handle overflows by: ƒ Search 
+the hash table in some systematic fashion for a bucket that is not full.
+
+
+11.The time complexity of nested loops is equal to the number of times the innermost statement is executed. 
+In the above nested-loop example, the inner loop is running n times for every iteration of the outer loop.
